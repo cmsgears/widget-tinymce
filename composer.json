@@ -1,0 +1,19 @@
+{
+	"name": "cmsgears/widget-tinymce",
+	"description": "The TinyMCE Widget provide a wrapper for TinyMCE WYSIWYG HTML editor for CMSGears projects.",
+	"homepage": "https://www.cmsgears.org",
+	"type": "package",
+	"keywords": [ "yii2", "cmsgears", "widget", "tinymce" ],
+	"license": "GPL-2.0-or-later",
+	"support": {
+		"resources": "https://www.cmsgears.org"
+	},
+	"autoload": {
+		"psr-4": {
+			"cmsgears\\widgets\\tinymce\\": ""
+		}
+	},
+    "require": {
+        "cmsgears/module-core": "*"
+    }
+}
