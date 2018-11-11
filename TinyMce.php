@@ -57,6 +57,9 @@ class TinyMce extends Widget {
 		// Configure TinyMCE
 		$editorConfig[ 'selector' ] = 'textarea' . $this->selector;
 
+		$editorConfig[ 'menubar' ]		= isset( $editorConfig[ 'menubar' ] ) ? $editorConfig[ 'menubar' ] : false;
+		$editorConfig[ 'statusbar' ]	= isset( $editorConfig[ 'statusbar' ] ) ? $editorConfig[ 'statusbar' ] : true;
+
 		$editorConfigJson = json_encode( $editorConfig );
 
 		// Add JS
