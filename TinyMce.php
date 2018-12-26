@@ -58,7 +58,10 @@ class TinyMce extends Widget {
 		$editorConfig[ 'selector' ] = 'textarea' . $this->selector;
 
 		$editorConfig[ 'menubar' ]		= isset( $editorConfig[ 'menubar' ] ) ? $editorConfig[ 'menubar' ] : false;
-		$editorConfig[ 'statusbar' ]	= isset( $editorConfig[ 'statusbar' ] ) ? $editorConfig[ 'statusbar' ] : true;
+		$editorConfig[ 'statusbar' ]	= isset( $editorConfig[ 'statusbar' ] ) ? $editorConfig[ 'statusbar' ] : false;
+		$editorConfig[ 'height' ]		= isset( $editorConfig[ 'height' ] ) ? $editorConfig[ 'height' ] : 250;
+		$editorConfig[ 'plugins' ]		= isset( $editorConfig[ 'plugins' ] ) ? $editorConfig[ 'plugins' ] : 'code';
+		$editorConfig[ 'toolbar' ]		= isset( $editorConfig[ 'toolbar' ] ) ? $editorConfig[ 'toolbar' ] : 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code';
 
 		$editorConfigJson = json_encode( $editorConfig );
 
