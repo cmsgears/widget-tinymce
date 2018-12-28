@@ -59,11 +59,19 @@ class TinyMce extends Widget {
 
 		$editorConfig[ 'menubar' ]		= isset( $editorConfig[ 'menubar' ] ) ? $editorConfig[ 'menubar' ] : false;
 		$editorConfig[ 'statusbar' ]	= isset( $editorConfig[ 'statusbar' ] ) ? $editorConfig[ 'statusbar' ] : false;
-		$editorConfig[ 'height' ]		= isset( $editorConfig[ 'height' ] ) ? $editorConfig[ 'height' ] : 250;
-		$editorConfig[ 'plugins' ]		= isset( $editorConfig[ 'plugins' ] ) ? $editorConfig[ 'plugins' ] : 'code';
-		$editorConfig[ 'toolbar' ]		= isset( $editorConfig[ 'toolbar' ] ) ? $editorConfig[ 'toolbar' ] : 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code';
 
-		$editorConfigJson = json_encode( $editorConfig );
+      	$editorConfig[ 'schema' ] = isset( $editorConfig[ 'schema' ] ) ? $editorConfig[ 'schema' ] : 'html5';
+		$editorConfig[ 'height' ] = isset( $editorConfig[ 'height' ] ) ? $editorConfig[ 'height' ] : 220;
+
+      	$editorConfig[ 'plugins' ]	= isset( $editorConfig[ 'plugins' ] ) ? $editorConfig[ 'plugins' ] : 'code lists';
+		$editorConfig[ 'toolbar' ]	= isset( $editorConfig[ 'toolbar' ] ) ? $editorConfig[ 'toolbar' ] : 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | code';
+
+      	$editorConfig[ 'relative_urls' ] 		= isset( $editorConfig[ 'relative_urls' ] ) ? $editorConfig[ 'relative_urls' ] : false;
+      	$editorConfig[ 'remove_script_host' ] 	= isset( $editorConfig[ 'remove_script_host' ] ) ? $editorConfig[ 'remove_script_host' ] : false;
+
+      	$editorConfig[ 'allow_html_in_named_anchor' ] = isset( $editorConfig[ 'allow_html_in_named_anchor' ] ) ? $editorConfig[ 'allow_html_in_named_anchor' ] : true;
+
+        $editorConfigJson = json_encode( $editorConfig );
 
 		// Add JS
 		$editorJs = "tinymce.init( $editorConfigJson );";
