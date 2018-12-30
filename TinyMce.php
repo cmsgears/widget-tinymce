@@ -45,29 +45,14 @@ class TinyMce extends Widget {
 
 	public $htmlInAnchor = true;
 
+	public $verifiyHtml = false;
+
 	public $validElements = [
-		'@[id|class|title|style]',
-		'a[name|href|target|title|alt]',
-		'#p',
-		'-ol', '-ul', '-li',
-		'img[src|unselectable]',
-		'-sub', '-sup',
-		'-b', '-i', '-u', 'br', 'hr',
-		'-span[data-mce-type]'
+		'*[*]'
 	];
 
 	public $validChildren = [
-		'body[p,ol,ul]',
-		'p[a|span|b|i|u|sup|sub|img|hr|#text]',
-		'span[a|b|i|u|sup|sub|img|#text]',
-		'+a[div|p|ul|ol|li|h1|h2|h3|h4|h5|h5|h6]',
-		'b[span|a|i|u|sup|sub|img|#text]',
-		'i[span|a|b|u|sup|sub|img|#text]',
-		'sup[span|a|i|b|u|sub|img|#text]',
-		'sub[span|a|i|b|u|sup|img|#text]',
-		'li[span|a|b|i|u|sup|sub|img|ol|ul|#text]',
-		'ol[li]',
-		'ul[li]'
+		'*[*]'
 	];
 
 	public $unsafeTargetLink = false;
@@ -114,8 +99,9 @@ class TinyMce extends Widget {
       	$editorConfig[ 'allow_html_in_named_anchor' ] = isset( $editorConfig[ 'allow_html_in_named_anchor' ] ) ? $editorConfig[ 'allow_html_in_named_anchor' ] : $this->htmlInAnchor;
 
 		// Fix Elements
-		$editorConfig[ 'valid_elements' ] = isset( $editorConfig[ 'valid_elements' ] ) ? $editorConfig[ 'valid_elements' ] : join( ',', $this->validElements );
-		$editorConfig[ 'valid_children' ] = isset( $editorConfig[ 'valid_children' ] ) ? $editorConfig[ 'valid_children' ] : join( ',', $this->validChildren );
+		$editorConfig[ 'verifiyHtml' ]		= isset( $editorConfig[ 'verifiyHtml' ] ) ? $editorConfig[ 'verifiyHtml' ] : $this->verifiyHtml;
+		$editorConfig[ 'valid_elements' ]	= isset( $editorConfig[ 'valid_elements' ] ) ? $editorConfig[ 'valid_elements' ] : join( ',', $this->validElements );
+		$editorConfig[ 'valid_children' ]	= isset( $editorConfig[ 'valid_children' ] ) ? $editorConfig[ 'valid_children' ] : join( ',', $this->validChildren );
 
 		// Open Target
 		$editorConfig[ 'allow_unsafe_link_target' ]	= isset( $editorConfig[ 'allow_unsafe_link_target' ] ) ? $editorConfig[ 'allow_unsafe_link_target' ] : $this->unsafeTargetLink;
