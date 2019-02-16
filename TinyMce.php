@@ -109,10 +109,12 @@ class TinyMce extends Widget {
         $editorConfigJson = json_encode( $editorConfig );
 
 		// Add JS
-		$editorJs = "tinymce.init( $editorConfigJson );";
+		$editorJs = "jQuery( document ).ready( function() { tinymce.init( $editorConfigJson ); });
+			function initCmtEditorBySelector( selector ) { var config = $editorConfigJson; config.selector = selector; tinymce.init( config ); }
+			function initCmtEditorByElement( element ) { var config = $editorConfigJson; delete config.selector; jQuery( element ).tinymce( config ); }";
 
 		// Call JS at end
-		$this->getView()->registerJs( $editorJs, View::POS_READY );
+		$this->getView()->registerJs( $editorJs, View::POS_END );
 	}
 
 }

@@ -1,4 +1,4 @@
-The directories scripts and styles consist of original code without any change and follows original license.
+The directory scripts consist of original code without any change and follows original license.
 
       GNU LESSER GENERAL PUBLIC LICENSE
            Version 2.1, February 1999
