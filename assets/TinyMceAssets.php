@@ -37,12 +37,14 @@ class TinyMceAssets extends AssetBundle {
 
 	// Load CSS
 	public $css = [
-		//'styles/tinymce.css',
+		'styles/main.css'
+		//'styles/skins/lightgray/skin.min.css'
     ];
 
 	// Load Javascript
     public $js = [
-		'scripts/tinymce.min.js'
+		'scripts/tinymce.min.js',
+		'scripts/jquery.tinymce.min.js'
     ];
 
 	// Define the Position to load Assets
