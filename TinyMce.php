@@ -37,8 +37,8 @@ class TinyMce extends Widget {
 	public $schema		= 'html5';
 	public $height		= 250;
 
-	public $plugins	= 'code lists';
-	public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | code';
+	public $plugins	= 'code lists codesample';
+	public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | code | codesample';
 
 	public $relativeUrl = false;
 	public $scriptHost	= false;
