@@ -13,11 +13,9 @@ namespace cmsgears\widgets\tinymce;
 use yii\web\View;
 
 // CMG Imports
-use cmsgears\core\common\base\Widget;
-
 use cmsgears\widgets\tinymce\assets\TinyMceAssets;
 
-class TinyMce extends Widget {
+class TinyMce extends \cmsgears\core\common\base\Widget {
 
 	// Variables ---------------------------------------------------
 
@@ -110,6 +108,7 @@ class TinyMce extends Widget {
 
 		// Add JS
 		$editorJs = "jQuery( document ).ready( function() { tinymce.init( $editorConfigJson ); });
+			//function tinymcesetup( editor ) { editor.on( 'change', function () { editor.save(); } ); } config.setup = tinymcesetup;
 			function initCmtEditorBySelector( selector ) { var config = $editorConfigJson; config.selector = selector; tinymce.init( config ); }
 			function initCmtEditorByElement( element ) { var config = $editorConfigJson; delete config.selector; jQuery( element ).tinymce( config ); }";
 
