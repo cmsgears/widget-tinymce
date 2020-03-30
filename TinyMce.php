@@ -35,8 +35,10 @@ class TinyMce extends \cmsgears\core\common\base\Widget {
 	public $schema		= 'html5';
 	public $height		= 250;
 
-	public $plugins	= 'code lists codesample';
-	public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | code | codesample';
+	//public $plugins	= 'image link code lists codesample fullscreen';
+	//public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | image link code | codesample | fullscreen';
+	public $plugins	= 'image link code lists codesample';
+	public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | image link code | codesample';
 
 	public $relativeUrl = false;
 	public $scriptHost	= false;
