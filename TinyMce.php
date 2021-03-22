@@ -13,11 +13,9 @@ namespace cmsgears\widgets\tinymce;
 use yii\web\View;
 
 // CMG Imports
-use cmsgears\core\common\base\Widget;
-
 use cmsgears\widgets\tinymce\assets\TinyMceAssets;
 
-class TinyMce extends Widget {
+class TinyMce extends \cmsgears\core\common\base\Widget {
 
 	// Variables ---------------------------------------------------
 
@@ -37,8 +35,10 @@ class TinyMce extends Widget {
 	public $schema		= 'html5';
 	public $height		= 250;
 
-	public $plugins	= 'code lists';
-	public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | code';
+	//public $plugins	= 'image link code lists codesample fullscreen';
+	//public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | image link code | codesample | fullscreen';
+	public $plugins	= 'image link code lists codesample';
+	public $toolbar	= 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | image link code | codesample';
 
 	public $relativeUrl = false;
 	public $scriptHost	= false;
@@ -110,6 +110,7 @@ class TinyMce extends Widget {
 
 		// Add JS
 		$editorJs = "jQuery( document ).ready( function() { tinymce.init( $editorConfigJson ); });
+			//function tinymcesetup( editor ) { editor.on( 'change', function () { editor.save(); } ); } config.setup = tinymcesetup;
 			function initCmtEditorBySelector( selector ) { var config = $editorConfigJson; config.selector = selector; tinymce.init( config ); }
 			function initCmtEditorByElement( element ) { var config = $editorConfigJson; delete config.selector; jQuery( element ).tinymce( config ); }";
 
